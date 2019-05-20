@@ -49,6 +49,11 @@ open class EmojiPickerViewController: UIViewController {
 // MARK: - EmojiPickerContentViewControllerDelegate
 
 extension EmojiPickerViewController: EmojiPopoverViewControllerDelegate {
+    override open func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        emojiPreviewer.hide()
+        super.viewWillTransition(to: size, with: coordinator)
+    }
+    
     func emojiPickerViewController(_ controller: EmojiPopoverViewController, didSelect emoji: Emoji) {
         emojiPreviewer.hide()
         delegate?.emojiPickerViewController(self, didSelect: emoji.selectedEmoji ?? emoji.emojis.first!)
