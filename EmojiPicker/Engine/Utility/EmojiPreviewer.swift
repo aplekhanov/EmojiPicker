@@ -130,25 +130,25 @@ extension EmojiPreviewer {
     }
     
     private func setupView(for emoji: Emoji, sourceView: UIView, sourceRect: CGRect, emojiFontSize: CGFloat, isDarkMode: Bool) {
-        multipleEmojisDefaultButton.titleLabel?.font = UIFont.systemFont(ofSize: emojiFontSize)
-        multipleEmojisDefaultButton.backgroundColor = multipleEmojisDefaultButton.tintColor
-        selectedButton = multipleEmojisDefaultButton
-        multipleEmojisWhiteButton.titleLabel?.font = multipleEmojisDefaultButton.titleLabel?.font
-        multipleEmojisWhiteButton.backgroundColor = .clear
-        multipleEmojisYellowButton.titleLabel?.font = multipleEmojisDefaultButton.titleLabel?.font
-        multipleEmojisYellowButton.backgroundColor = .clear
-        multipleEmojisLightButton.titleLabel?.font = multipleEmojisDefaultButton.titleLabel?.font
-        multipleEmojisLightButton.backgroundColor = .clear
-        multipleEmojisDarkButton.titleLabel?.font = multipleEmojisDefaultButton.titleLabel?.font
-        multipleEmojisDarkButton.backgroundColor = .clear
-        multipleEmojisBlackButton.titleLabel?.font = multipleEmojisDefaultButton.titleLabel?.font
-        multipleEmojisBlackButton.backgroundColor = .clear
+        
         multipleEmojisDefaultButton.setTitle(emoji.emojis[0], for: .normal, animated: false)
         multipleEmojisWhiteButton.setTitle(emoji.emojis[1], for: .normal, animated: false)
         multipleEmojisYellowButton.setTitle(emoji.emojis[2], for: .normal, animated: false)
         multipleEmojisLightButton.setTitle(emoji.emojis[3], for: .normal, animated: false)
         multipleEmojisDarkButton.setTitle(emoji.emojis[4], for: .normal, animated: false)
         multipleEmojisBlackButton.setTitle(emoji.emojis[5], for: .normal, animated: false)
+        
+        let buttons: [UIButton] = [multipleEmojisDefaultButton, multipleEmojisWhiteButton, multipleEmojisYellowButton, multipleEmojisLightButton, multipleEmojisDarkButton, multipleEmojisBlackButton]
+        
+        selectedButton = buttons.first(where: { return $0.title(for: .normal) == emoji.selectedEmoji })
+            ?? multipleEmojisDefaultButton
+        
+        for button in buttons {
+            button.titleLabel?.font = multipleEmojisDefaultButton.titleLabel?.font
+            button.backgroundColor = .clear
+        }
+        selectedButton?.titleLabel?.font = UIFont.systemFont(ofSize: emojiFontSize)
+        selectedButton?.backgroundColor = multipleEmojisDefaultButton.tintColor
         
         multipleEmojisAnchorImageView.image = UIImage(named: isDarkMode ? "anchorDarkEmojiTag" : "anchorLightEmojiTag", in: Bundle(for: EmojiPreviewer.self), compatibleWith: nil)
         multipleEmojisLeftImageView.image = UIImage(named: isDarkMode ? "leftDarkEmojiTag" : "leftLightEmojiTag", in: Bundle(for: EmojiPreviewer.self), compatibleWith: nil)
