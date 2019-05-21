@@ -23,6 +23,7 @@ open class EmojiPickerViewController: UIViewController {
     open var dismissAfterSelected = false
     open var size: CGSize = CGSize(width: 200, height: 300)
     open weak var delegate: EmojiPickerViewControllerDelegate?
+    open var userDefaults: UserDefaults = UserDefaults.standard
     lazy var emojiPreviewer: EmojiPreviewable = EmojiPreviewer.shared
     var emojiPopoverVC: EmojiPopoverViewController!
     
@@ -31,6 +32,7 @@ open class EmojiPickerViewController: UIViewController {
         let storyboard = UIStoryboard(name: "EmojiPopover", bundle: Bundle(for: EmojiPopoverViewController.self))
         emojiPopoverVC = storyboard.instantiateInitialViewController() as? EmojiPopoverViewController
         emojiPopoverVC.delegate = self
+        emojiPopoverVC.userDefaults = userDefaults
         emojiPopoverVC.sourceView = view
         emojiPopoverVC.sourceRect = sourceRect
         emojiPopoverVC.delegate = self

@@ -65,7 +65,8 @@ final class EmojiPopoverViewController: UIViewController {
     @IBOutlet weak var bottomVisualEffectView: UIVisualEffectView!
     @IBOutlet weak var groupTopLineView: UIView!
     var selectedGroupCell: GroupCollectionViewCell?
-    lazy var viewModel: EmojiPickerViewModelProtocol = EmojiPickerViewModel(userDefaults: UserDefaults.standard)
+    var userDefaults: UserDefaults = UserDefaults.standard
+    lazy var viewModel: EmojiPickerViewModelProtocol = EmojiPickerViewModel(userDefaults: userDefaults)
     lazy var vibrator: Vibratable = Vibrator()
     
     override func awakeFromNib() {
