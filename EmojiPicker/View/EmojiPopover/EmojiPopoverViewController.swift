@@ -151,7 +151,8 @@ extension EmojiPopoverViewController: UICollectionViewDelegate, UICollectionView
         if collectionView == emojisCollectionView {
             return Constant.EmojiCollectionViewCell.size
         }
-        return CGSize(width: max(collectionView.frame.width/CGFloat(viewModel.numberOfSections), 32), height: collectionView.frame.height)
+        let width = (collectionView.frame.width - 10) / CGFloat(viewModel.numberOfSections)
+        return CGSize(width: max(32, width), height: collectionView.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
