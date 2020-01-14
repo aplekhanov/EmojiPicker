@@ -27,6 +27,15 @@ open class EmojiPickerViewController: UIViewController {
     lazy var emojiPreviewer: EmojiPreviewable = EmojiPreviewer.shared
     var emojiPopoverVC: EmojiPopoverViewController!
     
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let dimmer = UIView(frame: view.bounds)
+        dimmer.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        dimmer.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(dimmer)
+    }
+    
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let storyboard = UIStoryboard(name: "EmojiPopover", bundle: Bundle(for: EmojiPopoverViewController.self))
@@ -79,7 +88,7 @@ extension EmojiPickerViewController: EmojiPopoverViewControllerDelegate {
 
     func emojiPickerViewControllerHideDeselectEmoji(_ controller: EmojiPopoverViewController) {
         emojiPreviewer.hide()
-    }       
+    }
     
     func emojiPickerViewControllerDidDimiss(_ controller: EmojiPopoverViewController) {
         emojiPreviewer.hide()
