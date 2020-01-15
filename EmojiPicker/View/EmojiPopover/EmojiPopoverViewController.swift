@@ -99,6 +99,12 @@ extension EmojiPopoverViewController: UIPopoverPresentationControllerDelegate {
     func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
         delegate?.emojiPickerViewControllerDidDimiss(self)
     }
+
+    func popoverPresentationControllerShouldDismissPopover(
+        _ popoverPresentationController: UIPopoverPresentationController) -> Bool {
+        
+        return false
+    }
 }
 
 // MARK: - UICollectionViewDataSource
