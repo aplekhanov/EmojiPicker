@@ -38,6 +38,7 @@
 		33D716B0219ACB6500599BDD /* EmojiPreviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D716AF219ACB6500599BDD /* EmojiPreviewer.swift */; };
 		33EA6B49219EBB8F00DDB012 /* emojis9.1.json in Resources */ = {isa = PBXBuildFile; fileRef = 33EA6B48219EBB8E00DDB012 /* emojis9.1.json */; };
 		33EA6B4B219EC7A700DDB012 /* emojis11.0.1.json in Resources */ = {isa = PBXBuildFile; fileRef = 33EA6B4A219EC7A700DDB012 /* emojis11.0.1.json */; };
+		B156853223CED46000AD7035 /* emojis12.json in Resources */ = {isa = PBXBuildFile; fileRef = B156853123CED46000AD7035 /* emojis12.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		33D716AF219ACB6500599BDD /* EmojiPreviewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPreviewer.swift; sourceTree = "<group>"; };
 		33EA6B48219EBB8E00DDB012 /* emojis9.1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emojis9.1.json; sourceTree = "<group>"; };
 		33EA6B4A219EC7A700DDB012 /* emojis11.0.1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emojis11.0.1.json; sourceTree = "<group>"; };
+		B156853123CED46000AD7035 /* emojis12.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emojis12.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				337131C021995CFC00838035 /* emojis.json */,
 				33EA6B48219EBB8E00DDB012 /* emojis9.1.json */,
 				33EA6B4A219EC7A700DDB012 /* emojis11.0.1.json */,
+				B156853123CED46000AD7035 /* emojis12.json */,
 				338155FF219973DE0059EF2F /* Assets.xcassets */,
 				33D716A9219A814400599BDD /* Localizable.strings */,
 			);
@@ -354,6 +357,7 @@
 				3303BE90219C417900B38800 /* EmojiPreviewer.xib in Resources */,
 				3327619821999BA100433FD4 /* EmojiHeaderView.xib in Resources */,
 				33D716A7219A814400599BDD /* Localizable.strings in Resources */,
+				B156853223CED46000AD7035 /* emojis12.json in Resources */,
 				337131B92199487B00838035 /* EmojiCollectionViewCell.xib in Resources */,
 				33815608219981160059EF2F /* GroupHeaderView.xib in Resources */,
 			);

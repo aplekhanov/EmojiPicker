@@ -34,6 +34,8 @@ final class EmojiPickerViewModel {
             path = Bundle(for: EmojiPickerViewModel.self).path(forResource: "emojis9.1", ofType: "json")!
         } else if systemVersion.compare("12", options: .numeric) == .orderedAscending {
             path = Bundle(for: EmojiPickerViewModel.self).path(forResource: "emojis11.0.1", ofType: "json")!
+        } else if systemVersion.compare("13", options: .numeric) == .orderedAscending {
+            path = Bundle(for: EmojiPickerViewModel.self).path(forResource: "emojis12", ofType: "json")!
         } else {
             path = Bundle(for: EmojiPickerViewModel.self).path(forResource: "emojis", ofType: "json")!
         }
