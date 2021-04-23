@@ -13,6 +13,7 @@ public protocol EmojiPickerViewControllerDelegate: class {
 }
 
 open class EmojiPickerViewController: UIViewController {
+    open var isDimmer = true
     open var sourceRect: CGRect = .zero
     open var permittedArrowDirections: UIPopoverArrowDirection = .any
     open var emojiFontSize: CGFloat = 29
@@ -30,10 +31,12 @@ open class EmojiPickerViewController: UIViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        let dimmer = UIView(frame: view.bounds)
-        dimmer.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        dimmer.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(dimmer)
+        if isDimmer {
+            let dimmer = UIView(frame: view.bounds)
+            dimmer.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+            dimmer.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            view.addSubview(dimmer)
+        }
     }
     
     open override func viewWillAppear(_ animated: Bool) {

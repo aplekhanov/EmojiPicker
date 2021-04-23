@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  EmojiPickerExample
 //
-//  Created by Jack Sparrow on 4/21/21.
+//  Created by Alexey Plekhanov on 4/21/21.
 //  Copyright © 2021 levantAJ. All rights reserved.
 //
 

@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBAction func pickEmoji(_ sender: UIButton) {
         let picker = EmojiPicker.viewController
         picker.sourceRect = sender.frame
+        picker.isDimmer = false
         picker.delegate = self
         present(picker, animated: true, completion: nil)
     }
