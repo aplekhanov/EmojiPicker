@@ -30,17 +30,6 @@ open class EmojiPickerViewController: UIViewController {
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if isDimmer {
-            let dimmer = UIView(frame: view.bounds)
-            dimmer.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-            dimmer.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            view.addSubview(dimmer)
-        }
-    }
-    
-    open override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         let storyboard = UIStoryboard(name: "EmojiPopover", bundle: Bundle(for: EmojiPopoverViewController.self))
         emojiPopoverVC = storyboard.instantiateInitialViewController() as? EmojiPopoverViewController
         emojiPopoverVC.delegate = self
@@ -56,7 +45,11 @@ open class EmojiPickerViewController: UIViewController {
         emojiPopoverVC.backgroundColor = backgroundColor
         emojiPopoverVC.permittedArrowDirections = permittedArrowDirections
         emojiPopoverVC.preferredContentSize = size
-        present(emojiPopoverVC, animated: true, completion: nil)
+        
+        addChild(emojiPopoverVC)
+        emojiPopoverVC.view.frame = view.frame
+        view.addSubview(emojiPopoverVC.view)
+        emojiPopoverVC.didMove(toParent: self)
     }
 }
 
