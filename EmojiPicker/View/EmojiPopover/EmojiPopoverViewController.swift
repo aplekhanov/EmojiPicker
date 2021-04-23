@@ -71,9 +71,6 @@ final class EmojiPopoverViewController: UIViewController {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        modalPresentationStyle = .popover
-        popoverPresentationController?.permittedArrowDirections = permittedArrowDirections
-        popoverPresentationController?.delegate = self
     }
     
     override func viewDidLoad() {
